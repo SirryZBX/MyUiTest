@@ -1,0 +1,9 @@
+2022-08-07 17:49:56,958 测试 INFO 执行程序名:base_action.py--57行 :ShellResponse(output='/system/bin/sh: adb: inaccessible or not found\n', exit_code=127) Find element 【首页登录按钮】{'resourceId': 'com.smile.gifmaker:id/left_text', 'text': '登录'}
+2022-08-07 17:50:01,712 测试 INFO 执行程序名:base_action.py--92行 :successful click 【首页登录按钮】{'resourceId': 'com.smile.gifmaker:id/left_text', 'text': '登录'}:index0
+2022-08-07 17:50:01,741 测试 INFO 执行程序名:base_action.py--57行 :ShellResponse(output='/system/bin/sh: adb: inaccessible or not found\n', exit_code=127) Find element 【其他方式登录】{'resourceId': 'com.smile.gifmaker:id/btn_other_login_ways'}
+2022-08-07 17:50:02,971 测试 INFO 执行程序名:base_action.py--57行 :ShellResponse(output='/system/bin/sh: adb: inaccessible or not found\n', exit_code=127) Find element 【其他方式登录】{'resourceId': 'com.smile.gifmaker:id/btn_other_login_ways'}
+2022-08-07 17:50:03,552 测试 INFO 执行程序名:base_action.py--92行 :successful click 【其他方式登录】{'resourceId': 'com.smile.gifmaker:id/btn_other_login_ways'}:index0
+2022-08-07 17:50:03,581 测试 INFO 执行程序名:base_action.py--57行 :ShellResponse(output='/system/bin/sh: adb: inaccessible or not found\n', exit_code=127) Find element 【其他手机号】{'resourceId': 'com.smile.gifmaker:id/btn_other_login_ways', 'text': '其他手机号码登录'}
+2022-08-07 17:50:24,877 测试 WARNING 执行程序名:base_action.py--64行 :0 Retry found the element【其他手机号】{'resourceId': 'com.smile.gifmaker:id/btn_other_login_ways', 'text': '其他手机号码登录'},index:0
+2022-08-07 17:50:48,259 测试 WARNING 执行程序名:base_action.py--64行 :0 Retry found the element【其他手机号】{'resourceId': 'com.smile.gifmaker:id/btn_other_login_ways', 'text': '其他手机号码登录'},index:0
+2022-08-07 17:51:11,635 测试 WARNING 执行程序名:base_action.py--64行 :0 Retry found the element【其他手机号】{'resourceId': 'com.smile.gifmaker:id/btn_other_login_ways', 'text': '其他手机号码登录'},index:0

@@ -1,0 +1,26 @@
+{
+  "uid" : "b1a8273437954620fa374b796ffaacdd",
+  "name" : "behaviors",
+  "children" : [ {
+    "name" : "测试PYMK-小红帽页面",
+    "children" : [ {
+      "name" : "测试小红帽页的功能",
+      "children" : [ {
+        "name" : "test_little_hot_pymk",
+        "uid" : "1efc121bdaf3f726",
+        "parentUid" : "1787fb9daa463ddc45183a7c96dfec18",
+        "status" : "passed",
+        "time" : {
+          "start" : 1659869674776,
+          "stop" : 1659869688004,
+          "duration" : 13228
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "1787fb9daa463ddc45183a7c96dfec18"
+    } ],
+    "uid" : "1b13a29dfa03376947e00c9393c5652e"
+  } ]
+}

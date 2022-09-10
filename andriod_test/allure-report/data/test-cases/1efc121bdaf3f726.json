@@ -1,0 +1,129 @@
+{
+  "uid" : "1efc121bdaf3f726",
+  "name" : "test_little_hot_pymk",
+  "fullName" : "test_PYMK.TestCase#test_little_hot_pymk",
+  "historyId" : "99c71ec398689cd20ea720663e3417dc",
+  "time" : {
+    "start" : 1659869674776,
+    "stop" : 1659869688004,
+    "duration" : 13228
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "通过快链进入小红帽页",
+      "time" : {
+        "start" : 1659869674776,
+        "stop" : 1659869674900,
+        "duration" : 124
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "点击第三个用户的关注按钮",
+      "time" : {
+        "start" : 1659869674900,
+        "stop" : 1659869680069,
+        "duration" : 5169
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "修改备注名",
+      "time" : {
+        "start" : 1659869680069,
+        "stop" : 1659869685436,
+        "duration" : 5367
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "删除第一个元素",
+      "time" : {
+        "start" : 1659869685436,
+        "stop" : 1659869688004,
+        "duration" : 2568
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 4,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "feature",
+    "value" : "测试PYMK-小红帽页面"
+  }, {
+    "name" : "story",
+    "value" : "测试小红帽页的功能"
+  }, {
+    "name" : "suite",
+    "value" : "test_PYMK"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestCase"
+  }, {
+    "name" : "host",
+    "value" : "macAir"
+  }, {
+    "name" : "thread",
+    "value" : "64744-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "test_PYMK"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "1efc121bdaf3f726.json",
+  "parameterValues" : [ ]
+}

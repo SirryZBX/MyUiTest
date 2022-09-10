@@ -1,0 +1,26 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "macAir",
+    "children" : [ {
+      "name" : "64744-MainThread",
+      "children" : [ {
+        "name" : "test_little_hot_pymk",
+        "uid" : "1efc121bdaf3f726",
+        "parentUid" : "17cd3377af5b4ec8d1a360e9d0739c40",
+        "status" : "passed",
+        "time" : {
+          "start" : 1659869674776,
+          "stop" : 1659869688004,
+          "duration" : 13228
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "17cd3377af5b4ec8d1a360e9d0739c40"
+    } ],
+    "uid" : "bd473df6c7bcf498b898f8d7eb100809"
+  } ]
+}

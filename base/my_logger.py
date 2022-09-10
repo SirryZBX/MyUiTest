@@ -2,11 +2,12 @@
 # enve python3.9
 """
 @Author:大王
-@File:logger.py
+@File:my_logger.py
 @CreateTime:2022/7/10 17:48
 """
 
 import logging
+import time
 
 
 class MyLogging(logging.Logger):
@@ -53,6 +54,8 @@ class MyLogging(logging.Logger):
                 self.addHandler(handle1)
 
 
+logger = MyLogging(name='测试', level=logging.INFO,
+                   file=f"../current_log/{time.time()}.txt", hint_show=True)
 
 
 

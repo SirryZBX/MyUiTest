@@ -3,5 +3,10 @@ username:
 password:
   zhao_19931011.
 package:
-
-
+  "com.smile.gifmaker"
+package1:
+  ""
+bundle_id:
+  ""
+device_id:
+  ""

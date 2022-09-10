@@ -1,0 +1,5 @@
+2022-08-07 17:29:15,834 测试 INFO 执行程序名:base_action.py--57行 :ShellResponse(output='/system/bin/sh: adb: inaccessible or not found\n', exit_code=127) Find element 【首页登录按钮】{'resourceId': 'com.smile.gifmaker:id/left_text'}
+2022-08-07 17:29:37,489 测试 WARNING 执行程序名:base_action.py--64行 :0 Retry found the element【首页登录按钮】{'resourceId': 'com.smile.gifmaker:id/left_text'},index:0
+2022-08-07 17:30:01,537 测试 WARNING 执行程序名:base_action.py--64行 :0 Retry found the element【首页登录按钮】{'resourceId': 'com.smile.gifmaker:id/left_text'},index:0
+2022-08-07 17:30:25,539 测试 WARNING 执行程序名:base_action.py--64行 :0 Retry found the element【首页登录按钮】{'resourceId': 'com.smile.gifmaker:id/left_text'},index:0
+2022-08-07 17:30:49,699 测试 WARNING 执行程序名:base_action.py--71行 :【click:82】Not found element【首页登录按钮】{'resourceId': 'com.smile.gifmaker:id/left_text'},index:0

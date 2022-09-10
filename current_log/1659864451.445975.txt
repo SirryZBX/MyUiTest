@@ -1,0 +1,2 @@
+2022-08-07 17:27:31,949 测试 INFO 执行程序名:base_action.py--57行 :ShellResponse(output='/system/bin/sh: adb: inaccessible or not found\n', exit_code=127) Find element 【第三个关注按钮】{'resourceId': 'com.smile.gifmaker:id/follow_button'}
+2022-08-07 17:27:53,540 测试 WARNING 执行程序名:base_action.py--64行 :0 Retry found the element【第三个关注按钮】{'resourceId': 'com.smile.gifmaker:id/follow_button'},index:3

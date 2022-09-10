@@ -9,35 +9,36 @@ import inspect
 import logging
 import os
 import time
-from typing import Union
+from typing import Union, Any
 
 import uiautomator2 as u2
 import re
 import cv2
 
 from base.error import ElementNotFoundError
-from logger import MyLogging
+from base.my_logger import MyLogging
 
 from uiautomator2 import UiObject
 from uiautomator2.xpath import XPathSelector
-from config import FIND_ELEMENT_RETRY
-from config import read_yaml
-
-logger = MyLogging(name='测试', level=logging.INFO,
-                   file=f"../current_log/{time.time()}.txt", hint_show=True)
+from base.config import FIND_ELEMENT_RETRY
+from base.config import read_yaml
+from my_logger import logger
+# logger = MyLogging(name='测试', level=logging.INFO,
+#                    file=f"../current_log/{time.time()}.txt", hint_show=True)
 
 test_package = read_yaml().get('package')
 
 
 class BaseAction(object):
     """基础组件"""
+    annotation: Union[str, Any]
     _element: Union[XPathSelector, UiObject]
 
     def __init__(self, *args, **kwargs):
         """连接设备"""
         self.driver = u2.connect_usb()  # 创建手机对象
-        logger.info('启动APP')
-        self.app_start()  # 启动APP
+        # logger.info('启动APP')
+        # self.app_start()  # 启动APP
         self._kwargs = kwargs
         self.resourceId = kwargs.get("resourceId", '')
         self.text = kwargs.get("text", '')
@@ -73,6 +74,43 @@ class BaseAction(object):
                                f'{self.index}')
                 return None
         return self._element
+
+    def find_element_by_child(self, ele, retries=FIND_ELEMENT_RETRY,
+                              timeout=10, **kwargs):
+        """子定位"""
+        self.annotation = kwargs.pop("annotation", "")
+        logger.info(f'{os.system("adb devices")} find element by'
+                    f'child {self.annotation}{str(kwargs)}')
+        self._element = ele.find_element().child(kwargs)
+        while not self._element.wait(timeout):
+            if retries > 0:
+                retries -= 1
+                logger.warning(f'{self.driver.shell("adb devices")} retry '
+                               f'found element by child {self.annotation}'
+                               f'{kwargs}')
+                time.sleep(1)
+            else:
+                frame = inspect.currentframe().f_back
+                caller = inspect.getframeinfo(frame)
+                logger.warning(f'{caller.function}:{caller.lineno} not found'
+                               f'element by child{self.annotation}{kwargs}')
+                return None
+        return self._element
+
+    def child_click(self, ele, retires=FIND_ELEMENT_RETRY, shoot=True,
+                    **kwargs):
+        """子元素点击
+        @param shoot: 截图标记
+        @param retires: 重试次数
+        @type ele: 父元素
+        """
+        element = self.find_element_by_child(ele, retires, kwargs)
+        if not element:
+            raise ElementNotFoundError(f"Not found element{self.annotation}"
+                                       f"{kwargs}")
+
+        element.click()
+        logger.info(f'Successful click {self.annotation}{kwargs}')
 
     def click(self, retries=FIND_ELEMENT_RETRY, shoot=True):
         """点击,只封装了常用的几种方式
@@ -153,7 +191,7 @@ class BaseAction(object):
             self.swipe(phone_x, phone_y, size_x-10, phone_y)
         logger.info(f"page successfully swipe by {direction}")
 
-    def send_key(self, text='', retries=FIND_ELEMENT_RETRY, shoot=True):
+    def send_keys(self, text='', retries=FIND_ELEMENT_RETRY, shoot=True):
         """输入内容"""
         element = self.find_element(retries)
         if not element:
@@ -161,9 +199,20 @@ class BaseAction(object):
                                        f"{self._kwargs},index:{self.index}")
         # if shoot:
         #     self.screen_shot(scene=self.desc) # openvc有点问题，截图暂时先不使用
-        element.send_keys(text=text)
+        element.send_text(text=text) if self.xpath else \
+            element.send_keys(text=text)
         logger.info(f"【{self.desc}】{self._kwargs}{self.index}"
                     f"Successfully send_keys {text}")
+
+    def get_text(self, retires=FIND_ELEMENT_RETRY):
+        element = self.find_element(retires)
+        if not element:
+            raise ElementNotFoundError(f"Not found element【{self.desc}】:"
+                                       f"{self._kwargs},index:{self.index}")
+
+        logger.info(f"【{self.desc}】{self._kwargs}{self.index}"
+                    f"Successfully send_keys")
+        return element.get_text()
 
     def open_scheme(self, url=''):
         """adb shell am start -a android.intent.action.VIEW -d url"""

@@ -12,7 +12,7 @@ FIND_ELEMENT_RETRY = 3
 
 def read_yaml():
     """读取基础配置"""
-    with open("./config.yaml", 'rb') as f:
+    with open("../base/config.yaml", 'rb') as f:
         my_config = yaml.safe_load(f)
         return my_config
 
