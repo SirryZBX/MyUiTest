@@ -49,6 +49,18 @@ class BaseAction(object):
         self.index = self._kwargs.pop('index', 0)
         self.desc = self._kwargs.pop('desc', '')
 
+    def __new__(cls, *args, **kwargs):
+        super().__new__(cls)
+
+    def __str__(self):
+        return f"本条元素是:{self._kwargs}"
+
+    def __call__(self, *args, **kwargs):
+        pass
+
+    def __del__(self):
+        pass
+
     def find_element(self, retries=FIND_ELEMENT_RETRY, timeout=20):
         """返回当前元素
         @param retries: 重试次数
