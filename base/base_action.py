@@ -22,9 +22,8 @@ from uiautomator2 import UiObject
 from uiautomator2.xpath import XPathSelector
 from base.config import FIND_ELEMENT_RETRY
 from base.config import read_yaml
-from my_logger import logger
-# logger = MyLogging(name='测试', level=logging.INFO,
-#                    file=f"../current_log/{time.time()}.txt", hint_show=True)
+from base.my_logger import logger
+
 
 test_package = read_yaml().get('package')
 
@@ -224,10 +223,10 @@ class BaseAction(object):
         logger.info("start app")
         self.driver.app_start(test_package)
 
-    def app_stop(self):
+    def app_stop(self, package):
         """停止APP"""
         logger.info("kill app")
-        self.driver.app_stop(test_package)
+        self.driver.app_stop(package)
 
     def set_phone_proxy(self, host="", port=""):
         """设置代理
@@ -256,22 +255,22 @@ class BaseAction(object):
 
     def screen_shot(self, scene=None):
         """截取当前场景图片和元素图片,并保存结果"""
+        file_name = f'../photo/{time.time()}'
         current_photo = self.driver.screenshot(f"{scene}.png")
         # 获取当前元素4点坐标
         bounds = self.find_element().info.get('bounds')
-        pos_x = (bounds['top']+bounds['bottom'])/2
-        pos_y = (bounds['left']+bounds['right'])/2
+        pos_x = int((bounds['top']+bounds['bottom'])/2)
+        pos_y = int((bounds['left']+bounds['right'])/2)
         src = cv2.imread(current_photo)
         color = (0, 0, 255)
         draw_maker = cv2.drawMarker(src, (pos_x, pos_y), color,
                                     cv2.MARKER_SQUARE,
                                     thickness=3)
         # 保存原图片
-        with open(f"/Users/apple/Desktop/UiautoTest/photo/", 'W') as f:
+        with open(file_name, 'W') as f:
             f.write(current_photo)
             f.close()
         # 保存标记后的图片
-        file_name = f"../photo/{scene}1.png"
         cv2.imwrite(file_name, draw_maker)
 
 

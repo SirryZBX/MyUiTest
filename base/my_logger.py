@@ -8,6 +8,8 @@
 
 import logging
 import time
+from datetime import datetime
+import colorlog
 
 
 class MyLogging(logging.Logger):
@@ -22,10 +24,16 @@ class MyLogging(logging.Logger):
         # 继承logging模块中的Logger类，因为里面实现了各种各样的方法，很全面，但是初始化很简单
         # 所以我们需要继承后把初始化再优化下，变成自己想要的。
         super().__init__(name, level)
+        log_color = {
+            'DEBUG': 'white',
+            'INFO': 'cyan',
+            'WARNING': 'yellow',
+            'ERROR': 'red',
+        }
 
         # 设置日志格式
-        fmt = "%(asctime)s %(name)s %(levelname)s " \
-              "执行程序名:%(filename)s--%(lineno)d行 :%(message)s"
+        color_loger = colorlog.ColoredFormatter(fmt="%(log_color)s %(asctime)s %(name)s %(levelname)s " \
+              "执行程序名:%(filename)s--%(lineno)d行 :%(message)s",log_colors=log_color)
 
         # %(levelno)s：打印日志级别的数值
         # %(levelname)s：打印日志级别的名称
@@ -38,24 +46,25 @@ class MyLogging(logging.Logger):
         # %(threadName)s：打印线程名称
         # %(process)d：打印进程ID
         # %(message)s：打印日志信息
-        formatter = logging.Formatter(fmt)
+        # formatter = logging.Formatter(color_loger)
 
         # 文件输出渠道
         if file:
             handle2 = logging.FileHandler(file, encoding="utf-8")
             handle2.baseFilename = file
-            handle2.setFormatter(formatter)
+            handle2.setFormatter(color_loger)
             self.addHandler(handle2)
 
             # 控制台渠道
             if hint_show:
                 handle1 = logging.StreamHandler()
-                handle1.setFormatter(formatter)
+                handle1.setFormatter(color_loger)
                 self.addHandler(handle1)
 
 
 logger = MyLogging(name='测试', level=logging.INFO,
-                   file=f"../current_log/{time.time()}.txt", hint_show=True)
+                   file=f"../current_log/{datetime.now().strftime('%Y-%m-%d-%H:%M:%S')}.txt", hint_show=True)
+
 
 
 

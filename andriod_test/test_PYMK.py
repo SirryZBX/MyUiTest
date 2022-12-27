@@ -9,9 +9,10 @@ import time
 
 import pytest
 import allure
-from pages.log_page import LogPage
-from pages.little_hot_riding_hood import LittleHot
+from pages.android.log_page import LogPage
+from pages.android.little_hot_riding_hood import LittleHot
 import os
+import subprocess
 
 
 @allure.feature("测试PYMK-小红帽页面")
@@ -40,5 +41,6 @@ if __name__ == "__main__":
     pytest.main(['-s', '-q', 'test_PYMK.py', '--clean-alluredir',
                  '--alluredir=allure-results'])
     os.system(r"allure generate -c -o allure-report")
+    # subprocess.call(r"allure generate -c -o allure-report")
 
 

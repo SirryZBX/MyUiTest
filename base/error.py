@@ -21,5 +21,11 @@ class ElementNotFoundError(BaseError):
     pass
 
 
+class WDALaunchFailError(BaseError):
+    """wda启动失败"""
 
+
+class WDAMaxRetryError(BaseError):
+    """wda重试最大次数"""
+    pass
 

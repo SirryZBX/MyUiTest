@@ -1,6 +1,0 @@
-2022-08-07 18:20:26,050 测试 INFO 执行程序名:base_action.py--57行 :ShellResponse(output='/system/bin/sh: adb: inaccessible or not found\n', exit_code=127) Find element 【第三个关注按钮】{'resourceId': 'com.smile.gifmaker:id/follow_button'}
-2022-08-07 18:20:29,106 测试 INFO 执行程序名:base_action.py--92行 :successful click 【第三个关注按钮】{'resourceId': 'com.smile.gifmaker:id/follow_button'}:index2
-2022-08-07 18:20:29,130 测试 INFO 执行程序名:base_action.py--57行 :ShellResponse(output='/system/bin/sh: adb: inaccessible or not found\n', exit_code=127) Find element 【小铅笔】{'xpath': '//*[@resource-id="com.smile.gifmaker:id/user_alias_mark"]/android.widget.ImageView[1]'}
-2022-08-07 18:20:29,867 测试 INFO 执行程序名:base_action.py--57行 :ShellResponse(output='/system/bin/sh: adb: inaccessible or not found\n', exit_code=127) Find element 【小铅笔】{'xpath': '//*[@resource-id="com.smile.gifmaker:id/user_alias_mark"]/android.widget.ImageView[1]'}
-2022-08-07 18:20:31,611 测试 INFO 执行程序名:base_action.py--92行 :successful click 【小铅笔】{'xpath': '//*[@resource-id="com.smile.gifmaker:id/user_alias_mark"]/android.widget.ImageView[1]'}:index0
-2022-08-07 18:20:31,642 测试 INFO 执行程序名:base_action.py--57行 :ShellResponse(output='/system/bin/sh: adb: inaccessible or not found\n', exit_code=127) Find element 【备注名输入框】{'xpath': '//android.widget.FrameLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]'}
