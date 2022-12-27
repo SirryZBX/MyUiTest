@@ -3,9 +3,9 @@ username:
 password:
   zhao_19931011.
 package:
-  "com.smile.gifmaker"
+  xxx
 package1:
-  "com.kwai.gifshow.beta1"
+  xxxx
 bundle_id:
   "com.facebook.WebDriverAgentRunner.zhaobx.xctrunner"
 device_id:
